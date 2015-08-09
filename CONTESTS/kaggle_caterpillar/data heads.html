@@ -1,0 +1,5228 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://www.kaggle.io/svf/20672/460cd71b7b314fa58325fbe466a70cc7/output.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="utf-8">
+
+<meta name="generator" content="pandoc">
+
+
+
+<title></title>
+
+<script src="./output_files/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://www.kaggle.io/svf/20672/460cd71b7b314fa58325fbe466a70cc7/output_files/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="./output_files/bootstrap.min.js"></script>
+<script src="./output_files/html5shiv.min.js"></script>
+<script src="./output_files/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet" href="./output_files/default.css" type="text/css">
+<script src="./output_files/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<script type="text/javascript" src="./output_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+
+<style type="text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+
+
+<p>Here’s the top of each CSV:</p>
+<pre class="r"><code class="r"><span class="identifier">files</span> <span class="operator">&lt;-</span> <span class="identifier">list.files</span><span class="paren">(</span><span class="string">"../input"</span><span class="paren">)</span>
+<span class="keyword">library</span><span class="paren">(</span><span class="identifier">readr</span><span class="paren">)</span>
+<span class="keyword">library</span><span class="paren">(</span><span class="identifier">xtable</span><span class="paren">)</span>
+<span class="keyword">for</span> <span class="paren">(</span><span class="identifier">file</span> <span class="keyword">in</span> <span class="identifier">files</span><span class="paren">)</span> <span class="paren">{</span>
+ <span class="identifier">cat</span><span class="paren">(</span><span class="string">"&lt;h3&gt;"</span><span class="paren">)</span>
+ <span class="identifier">cat</span><span class="paren">(</span><span class="identifier">file</span><span class="paren">)</span>
+ <span class="identifier">cat</span><span class="paren">(</span><span class="string">"&lt;/h3&gt;"</span><span class="paren">)</span>
+ <span class="identifier">df</span> <span class="operator">&lt;-</span> <span class="identifier">read_csv</span><span class="paren">(</span><span class="identifier">file.path</span><span class="paren">(</span><span class="string">"../input"</span>, <span class="identifier">file</span><span class="paren">)</span><span class="paren">)</span>
+ <span class="identifier">print</span><span class="paren">(</span><span class="identifier">xtable</span><span class="paren">(</span><span class="identifier">head</span><span class="paren">(</span><span class="identifier">df</span><span class="paren">)</span><span class="paren">)</span>, <span class="identifier">type</span><span class="operator">=</span><span class="string">"html"</span><span class="paren">)</span>
+ <span class="identifier">cat</span><span class="paren">(</span><span class="string">"\n\n\n"</span><span class="paren">)</span>
+<span class="paren">}</span></code></pre>
+<h3>
+bill_of_materials.csv
+</h3>
+<pre><code>## Warning: 252 problems parsing '../input/bill_of_materials.csv'. See
+## problems(...) for more details.</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+tube_assembly_id
+</th>
+<th>
+component_id_1
+</th>
+<th>
+quantity_1
+</th>
+<th>
+component_id_2
+</th>
+<th>
+quantity_2
+</th>
+<th>
+component_id_3
+</th>
+<th>
+quantity_3
+</th>
+<th>
+component_id_4
+</th>
+<th>
+quantity_4
+</th>
+<th>
+component_id_5
+</th>
+<th>
+quantity_5
+</th>
+<th>
+component_id_6
+</th>
+<th>
+quantity_6
+</th>
+<th>
+component_id_7
+</th>
+<th>
+quantity_7
+</th>
+<th>
+component_id_8
+</th>
+<th>
+quantity_8
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+TA-00001
+</td>
+<td>
+C-1622
+</td>
+<td align="right">
+2
+</td>
+<td>
+C-1629
+</td>
+<td align="right">
+2
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+TA-00002
+</td>
+<td>
+C-1312
+</td>
+<td align="right">
+2
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+TA-00003
+</td>
+<td>
+C-1312
+</td>
+<td align="right">
+2
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+TA-00004
+</td>
+<td>
+C-1312
+</td>
+<td align="right">
+2
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+TA-00005
+</td>
+<td>
+C-1624
+</td>
+<td align="right">
+1
+</td>
+<td>
+C-1631
+</td>
+<td align="right">
+1
+</td>
+<td>
+C-1641
+</td>
+<td align="right">
+1
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+TA-00006
+</td>
+<td>
+C-1624
+</td>
+<td align="right">
+1
+</td>
+<td>
+C-1631
+</td>
+<td align="right">
+1
+</td>
+<td>
+C-1641
+</td>
+<td align="right">
+1
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_adaptor.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+adaptor_angle
+</th>
+<th>
+overall_length
+</th>
+<th>
+end_form_id_1
+</th>
+<th>
+connection_type_id_1
+</th>
+<th>
+length_1
+</th>
+<th>
+thread_size_1
+</th>
+<th>
+thread_pitch_1
+</th>
+<th>
+nominal_size_1
+</th>
+<th>
+end_form_id_2
+</th>
+<th>
+connection_type_id_2
+</th>
+<th>
+length_2
+</th>
+<th>
+thread_size_2
+</th>
+<th>
+thread_pitch_2
+</th>
+<th>
+nominal_size_2
+</th>
+<th>
+hex_size
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0005
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+58.40
+</td>
+<td>
+A-001
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+</td>
+<td align="right">
+1.31
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td>
+A-001
+</td>
+<td>
+B-004
+</td>
+<td align="right">
+</td>
+<td align="right">
+1.00
+</td>
+<td align="right">
+11.50
+</td>
+<td align="right">
+</td>
+<td align="right">
+34.93
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.21
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0006
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+34.80
+</td>
+<td>
+A-001
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.44
+</td>
+<td align="right">
+20.00
+</td>
+<td align="right">
+</td>
+<td>
+A-001
+</td>
+<td>
+B-005
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.75
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+22.20
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.08
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-1435
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+20.30
+</td>
+<td>
+A-007
+</td>
+<td>
+B-004
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+15.88
+</td>
+<td>
+A-001
+</td>
+<td>
+B-007
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.88
+</td>
+<td align="right">
+18.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+22.22
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.02
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-1546
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+26.40
+</td>
+<td>
+A-007
+</td>
+<td>
+B-004
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.12
+</td>
+<td align="right">
+27.00
+</td>
+<td align="right">
+</td>
+<td>
+A-001
+</td>
+<td>
+B-004
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.12
+</td>
+<td align="right">
+27.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+15.88
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.03
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-1583
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+44.50
+</td>
+<td>
+A-001
+</td>
+<td>
+B-005
+</td>
+<td align="right">
+</td>
+<td align="right">
+1.31
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td>
+A-007
+</td>
+<td>
+B-005
+</td>
+<td align="right">
+</td>
+<td align="right">
+1.06
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+38.10
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.26
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-1634
+</td>
+<td>
+CP-028
+</td>
+<td align="right">
+</td>
+<td align="right">
+34.50
+</td>
+<td>
+A-001
+</td>
+<td>
+B-005
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.75
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td>
+A-001
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.69
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+22.23
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.06
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_boss.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+type
+</th>
+<th>
+connection_type_id
+</th>
+<th>
+outside_shape
+</th>
+<th>
+base_type
+</th>
+<th>
+height_over_tube
+</th>
+<th>
+bolt_pattern_long
+</th>
+<th>
+bolt_pattern_wide
+</th>
+<th>
+groove
+</th>
+<th>
+base_diameter
+</th>
+<th>
+shoulder_diameter
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0008
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-005
+</td>
+<td>
+Round
+</td>
+<td>
+Flat Bottom
+</td>
+<td align="right">
+17.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+22.00
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.03
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0009
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-004
+</td>
+<td>
+Round
+</td>
+<td>
+Flat Bottom
+</td>
+<td align="right">
+13.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+25.00
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.03
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0020
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-005
+</td>
+<td>
+Round
+</td>
+<td>
+Saddle
+</td>
+<td align="right">
+28.40
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+35.00
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.07
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0054
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-005
+</td>
+<td>
+Round
+</td>
+<td>
+Saddle
+</td>
+<td align="right">
+27.10
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.18
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0071
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-005
+</td>
+<td>
+Round
+</td>
+<td>
+Shoulder
+</td>
+<td align="right">
+20.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+30.00
+</td>
+<td align="right">
+23.00
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.08
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0082
+</td>
+<td>
+CP-018
+</td>
+<td>
+Boss
+</td>
+<td>
+B-002
+</td>
+<td>
+Round
+</td>
+<td>
+Saddle
+</td>
+<td align="right">
+15.65
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.04
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_elbow.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+bolt_pattern_long
+</th>
+<th>
+bolt_pattern_wide
+</th>
+<th>
+extension_length
+</th>
+<th>
+overall_length
+</th>
+<th>
+thickness
+</th>
+<th>
+drop_length
+</th>
+<th>
+elbow_angle
+</th>
+<th>
+mj_class_code
+</th>
+<th>
+mj_plug_class_code
+</th>
+<th>
+plug_diameter
+</th>
+<th>
+groove
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0013
+</td>
+<td>
+CP-008
+</td>
+<td align="right">
+152.40
+</td>
+<td align="right">
+92.08
+</td>
+<td align="right">
+105.00
+</td>
+<td align="right">
+185.00
+</td>
+<td align="right">
+113.00
+</td>
+<td align="right">
+75.00
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+8.89
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0016
+</td>
+<td>
+CP-009
+</td>
+<td align="right">
+57.20
+</td>
+<td align="right">
+27.80
+</td>
+<td align="right">
+42.00
+</td>
+<td align="right">
+69.00
+</td>
+<td align="right">
+44.00
+</td>
+<td align="right">
+24.00
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.17
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0017
+</td>
+<td>
+CP-009
+</td>
+<td align="right">
+57.20
+</td>
+<td align="right">
+27.80
+</td>
+<td align="right">
+42.00
+</td>
+<td align="right">
+69.00
+</td>
+<td align="right">
+47.00
+</td>
+<td align="right">
+26.00
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.25
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0018
+</td>
+<td>
+CP-009
+</td>
+<td align="right">
+66.60
+</td>
+<td align="right">
+31.80
+</td>
+<td align="right">
+50.00
+</td>
+<td align="right">
+80.00
+</td>
+<td align="right">
+57.00
+</td>
+<td align="right">
+31.50
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.86
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0021
+</td>
+<td>
+CP-010
+</td>
+<td align="right">
+75.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+31.50
+</td>
+<td align="right">
+70.00
+</td>
+<td align="right">
+25.00
+</td>
+<td align="right">
+12.50
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.90
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0022
+</td>
+<td>
+CP-010
+</td>
+<td align="right">
+39.41
+</td>
+<td align="right">
+</td>
+<td align="right">
+24.00
+</td>
+<td align="right">
+39.00
+</td>
+<td align="right">
+7.00
+</td>
+<td align="right">
+9.00
+</td>
+<td align="right">
+90.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.10
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_float.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+bolt_pattern_long
+</th>
+<th>
+bolt_pattern_wide
+</th>
+<th>
+thickness
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0027
+</td>
+<td>
+CP-021
+</td>
+<td align="right">
+148.00
+</td>
+<td align="right">
+96.00
+</td>
+<td align="right">
+18.00
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+2.23
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0454
+</td>
+<td>
+CP-022
+</td>
+<td align="right">
+58.72
+</td>
+<td align="right">
+30.18
+</td>
+<td align="right">
+28.00
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.59
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0455
+</td>
+<td>
+CP-022
+</td>
+<td align="right">
+58.72
+</td>
+<td align="right">
+30.18
+</td>
+<td align="right">
+28.00
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.53
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0494
+</td>
+<td>
+CP-022
+</td>
+<td align="right">
+52.40
+</td>
+<td align="right">
+26.20
+</td>
+<td align="right">
+15.85
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.23
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0496
+</td>
+<td>
+CP-022
+</td>
+<td align="right">
+58.80
+</td>
+<td align="right">
+30.20
+</td>
+<td align="right">
+14.20
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.28
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0508
+</td>
+<td>
+CP-021
+</td>
+<td align="right">
+77.76
+</td>
+<td align="right">
+42.88
+</td>
+<td align="right">
+25.40
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.14
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_hfl.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+hose_diameter
+</th>
+<th>
+corresponding_shell
+</th>
+<th>
+coupling_class
+</th>
+<th>
+material
+</th>
+<th>
+plating
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0872
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+4.80
+</td>
+<td>
+C-0855
+</td>
+<td>
+SP-0098
+</td>
+<td>
+SP-0016
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0873
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+4.80
+</td>
+<td>
+C-0856
+</td>
+<td>
+SP-0098
+</td>
+<td>
+SP-0016
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0874
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+4.80
+</td>
+<td>
+C-0857
+</td>
+<td>
+SP-0098
+</td>
+<td>
+SP-0038
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.00
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-1039
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+15.90
+</td>
+<td>
+C-1040
+</td>
+<td>
+SP-0097
+</td>
+<td>
+SP-0095
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.05
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-1041
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+15.90
+</td>
+<td>
+C-1042
+</td>
+<td>
+SP-0099
+</td>
+<td>
+SP-0095
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.07
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-1043
+</td>
+<td>
+CP-023
+</td>
+<td align="right">
+25.40
+</td>
+<td>
+C-1044
+</td>
+<td>
+SP-0099
+</td>
+<td>
+SP-0095
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.20
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_nut.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+hex_nut_size
+</th>
+<th>
+seat_angle
+</th>
+<th>
+length
+</th>
+<th>
+thread_size
+</th>
+<th>
+thread_pitch
+</th>
+<th>
+diameter
+</th>
+<th>
+blind_hole
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-1621
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+20.64
+</td>
+<td align="right">
+</td>
+<td align="right">
+17.00
+</td>
+<td>
+.687
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-1624
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+34.92
+</td>
+<td align="right">
+</td>
+<td align="right">
+26.50
+</td>
+<td>
+1.187
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.04
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-1623
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+28.58
+</td>
+<td align="right">
+</td>
+<td align="right">
+23.50
+</td>
+<td>
+1.000
+</td>
+<td align="right">
+14.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.04
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-1622
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+23.81
+</td>
+<td align="right">
+</td>
+<td align="right">
+20.00
+</td>
+<td>
+.812
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.04
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-1625
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+41.28
+</td>
+<td align="right">
+</td>
+<td align="right">
+27.50
+</td>
+<td>
+1.437
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.13
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-1626
+</td>
+<td>
+CP-025
+</td>
+<td align="right">
+47.63
+</td>
+<td align="right">
+</td>
+<td align="right">
+27.50
+</td>
+<td>
+1.687
+</td>
+<td align="right">
+12.00
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.15
+</td>
+</tr>
+</tbody></table>
+<h3>
+components.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+name
+</th>
+<th>
+component_type_id
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+9999
+</td>
+<td>
+OTHER
+</td>
+<td>
+OTHER
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0001
+</td>
+<td>
+SLEEVE
+</td>
+<td>
+CP-024
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0002
+</td>
+<td>
+SLEEVE
+</td>
+<td>
+CP-024
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0003
+</td>
+<td>
+SLEEVE-FLARED
+</td>
+<td>
+CP-024
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0004
+</td>
+<td>
+NUT
+</td>
+<td>
+CP-026
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0005
+</td>
+<td>
+ADAPTER-STR
+</td>
+<td>
+CP-028
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_other.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+part_name
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-1385
+</td>
+<td>
+NUT-FLARED
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-1386
+</td>
+<td>
+SLEEVE-FLARED
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-1369
+</td>
+<td>
+COLLAR
+</td>
+<td align="right">
+0.00
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0422
+</td>
+<td>
+WASHER-FUEL LIN
+</td>
+<td align="right">
+0.00
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-1817
+</td>
+<td>
+FITTING-NUT
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-1374
+</td>
+<td>
+NUT
+</td>
+<td align="right">
+0.02
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_sleeve.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+connection_type_id
+</th>
+<th>
+length
+</th>
+<th>
+intended_nut_thread
+</th>
+<th>
+intended_nut_pitch
+</th>
+<th>
+unique_feature
+</th>
+<th>
+plating
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0001
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+17.30
+</td>
+<td align="right">
+1.06
+</td>
+<td align="right">
+12
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0002
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+11.20
+</td>
+<td align="right">
+0.50
+</td>
+<td align="right">
+20
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0003
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+19.30
+</td>
+<td align="right">
+1.19
+</td>
+<td align="right">
+12
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0048
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+9.50
+</td>
+<td align="right">
+0.56
+</td>
+<td align="right">
+18
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0049
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+9.50
+</td>
+<td align="right">
+0.81
+</td>
+<td align="right">
+16
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0050
+</td>
+<td>
+CP-024
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+10.50
+</td>
+<td align="right">
+1.00
+</td>
+<td align="right">
+14
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.01
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_straight.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+bolt_pattern_long
+</th>
+<th>
+bolt_pattern_wide
+</th>
+<th>
+head_diameter
+</th>
+<th>
+overall_length
+</th>
+<th>
+thickness
+</th>
+<th>
+mj_class_code
+</th>
+<th>
+groove
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0012
+</td>
+<td>
+CP-001
+</td>
+<td align="right">
+66.68
+</td>
+<td align="right">
+31.75
+</td>
+<td align="right">
+</td>
+<td align="right">
+40.00
+</td>
+<td align="right">
+20.00
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.79
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0014
+</td>
+<td>
+CP-001
+</td>
+<td align="right">
+47.60
+</td>
+<td align="right">
+22.20
+</td>
+<td align="right">
+</td>
+<td align="right">
+38.00
+</td>
+<td align="right">
+15.00
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.34
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0015
+</td>
+<td>
+CP-001
+</td>
+<td align="right">
+66.70
+</td>
+<td align="right">
+31.80
+</td>
+<td align="right">
+</td>
+<td align="right">
+40.00
+</td>
+<td align="right">
+20.00
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.79
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0019
+</td>
+<td>
+CP-002
+</td>
+<td align="right">
+77.80
+</td>
+<td align="right">
+42.90
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+36.50
+</td>
+<td>
+MJ-003
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.53
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0029
+</td>
+<td>
+CP-001
+</td>
+<td align="right">
+47.63
+</td>
+<td align="right">
+22.23
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+16.00
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.29
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0036
+</td>
+<td>
+CP-003
+</td>
+<td align="right">
+96.82
+</td>
+<td align="right">
+44.45
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+36.00
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.85
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_tee.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+bolt_pattern_long
+</th>
+<th>
+bolt_pattern_wide
+</th>
+<th>
+extension_length
+</th>
+<th>
+overall_length
+</th>
+<th>
+thickness
+</th>
+<th>
+drop_length
+</th>
+<th>
+mj_class_code
+</th>
+<th>
+mj_plug_class_code
+</th>
+<th>
+groove
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0271
+</td>
+<td>
+OTHER
+</td>
+<td align="right">
+58.70
+</td>
+<td align="right">
+30.20
+</td>
+<td align="right">
+57.10
+</td>
+<td align="right">
+93.00
+</td>
+<td align="right">
+57
+</td>
+<td align="right">
+28.50
+</td>
+<td>
+MJ-003
+</td>
+<td>
+Threaded
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.53
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-1809
+</td>
+<td>
+OTHER
+</td>
+<td align="right">
+58.72
+</td>
+<td align="right">
+30.18
+</td>
+<td align="right">
+57.09
+</td>
+<td align="right">
+108.00
+</td>
+<td align="right">
+57
+</td>
+<td align="right">
+28.50
+</td>
+<td>
+MJ-003
+</td>
+<td>
+MJ-005
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+2.18
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-1830
+</td>
+<td>
+OTHER
+</td>
+<td align="right">
+52.40
+</td>
+<td align="right">
+26.20
+</td>
+<td align="right">
+43.50
+</td>
+<td align="right">
+78.50
+</td>
+<td align="right">
+51
+</td>
+<td align="right">
+25.50
+</td>
+<td>
+MJ-003
+</td>
+<td>
+Threaded
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.14
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-1865
+</td>
+<td>
+OTHER
+</td>
+<td align="right">
+58.70
+</td>
+<td align="right">
+30.20
+</td>
+<td align="right">
+57.10
+</td>
+<td align="right">
+107.00
+</td>
+<td align="right">
+57
+</td>
+<td align="right">
+28.50
+</td>
+<td>
+MJ-003
+</td>
+<td>
+MJ-005
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1.95
+</td>
+</tr>
+</tbody></table>
+<h3>
+comp_threaded.csv
+</h3>
+<pre><code>## Warning: 2 problems parsing '../input/comp_threaded.csv'. See problems(...)
+## for more details.</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_id
+</th>
+<th>
+component_type_id
+</th>
+<th>
+adaptor_angle
+</th>
+<th>
+overall_length
+</th>
+<th>
+hex_size
+</th>
+<th>
+end_form_id_1
+</th>
+<th>
+connection_type_id_1
+</th>
+<th>
+length_1
+</th>
+<th>
+thread_size_1
+</th>
+<th>
+thread_pitch_1
+</th>
+<th>
+nominal_size_1
+</th>
+<th>
+end_form_id_2
+</th>
+<th>
+connection_type_id_2
+</th>
+<th>
+length_2
+</th>
+<th>
+thread_size_2
+</th>
+<th>
+thread_pitch_2
+</th>
+<th>
+nominal_size_2
+</th>
+<th>
+end_form_id_3
+</th>
+<th>
+connection_type_id_3
+</th>
+<th>
+length_3
+</th>
+<th>
+thread_size_3
+</th>
+<th>
+thread_pitch_3
+</th>
+<th>
+nominal_size_3
+</th>
+<th>
+end_form_id_4
+</th>
+<th>
+connection_type_id_4
+</th>
+<th>
+length_4
+</th>
+<th>
+thread_size_4
+</th>
+<th>
+thread_pitch_4
+</th>
+<th>
+nominal_size_4
+</th>
+<th>
+unique_feature
+</th>
+<th>
+orientation
+</th>
+<th>
+weight
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+C-0007
+</td>
+<td>
+CP-014
+</td>
+<td align="right">
+</td>
+<td align="right">
+24.40
+</td>
+<td align="right">
+12.70
+</td>
+<td>
+A-001
+</td>
+<td>
+B-001
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.44
+</td>
+<td align="right">
+20.00
+</td>
+<td align="right">
+</td>
+<td>
+A-004
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+6.35
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.03
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+C-0030
+</td>
+<td>
+CP-015
+</td>
+<td align="right">
+90
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+A-003
+</td>
+<td>
+</td>
+<td align="right">
+47.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+42.00
+</td>
+<td>
+A-003
+</td>
+<td>
+</td>
+<td align="right">
+47.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+42.00
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.91
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+C-0041
+</td>
+<td>
+CP-014
+</td>
+<td align="right">
+</td>
+<td align="right">
+28.00
+</td>
+<td align="right">
+32.00
+</td>
+<td>
+A-004
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+21.70
+</td>
+<td>
+A-001
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.81
+</td>
+<td align="right">
+16
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.12
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+C-0043
+</td>
+<td>
+CP-014
+</td>
+<td align="right">
+</td>
+<td align="right">
+38.00
+</td>
+<td align="right">
+27.00
+</td>
+<td>
+A-003
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+21.70
+</td>
+<td>
+A-001
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+</td>
+<td align="right">
+0.81
+</td>
+<td align="right">
+16
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.09
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+C-0044
+</td>
+<td>
+CP-014
+</td>
+<td align="right">
+</td>
+<td align="right">
+30.50
+</td>
+<td align="right">
+41.28
+</td>
+<td>
+A-004
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+34.00
+</td>
+<td>
+A-001
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+</td>
+<td align="right">
+1.44
+</td>
+<td align="right">
+12
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+No
+</td>
+<td>
+No
+</td>
+<td align="right">
+0.18
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+C-0069
+</td>
+<td>
+CP-015
+</td>
+<td align="right">
+90
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+A-001
+</td>
+<td>
+B-002
+</td>
+<td align="right">
+29.00
+</td>
+<td align="right">
+0.81
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td>
+A-004
+</td>
+<td>
+</td>
+<td align="right">
+16.00
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+17.30
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td align="right">
+</td>
+<td>
+</td>
+<td>
+Yes
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+0.22
+</td>
+</tr>
+</tbody></table>
+<h3>
+specs.csv
+</h3>
+<pre><code>## Warning: 2733 problems parsing '../input/specs.csv'. See problems(...) for
+## more details.</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+tube_assembly_id
+</th>
+<th>
+spec1
+</th>
+<th>
+spec2
+</th>
+<th>
+spec3
+</th>
+<th>
+spec4
+</th>
+<th>
+spec5
+</th>
+<th>
+spec6
+</th>
+<th>
+spec7
+</th>
+<th>
+spec8
+</th>
+<th>
+spec9
+</th>
+<th>
+spec10
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+TA-00001
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+TA-00002
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+TA-00003
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+TA-00004
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+TA-00005
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+TA-00006
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody></table>
+<h3>
+test_set.csv
+</h3>
+<pre><code>## Warning in formatC(x = structure(c(15879L, 15879L, 15879L, 15879L,
+## 15879L, : class of 'x' was discarded</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+id
+</th>
+<th>
+tube_assembly_id
+</th>
+<th>
+supplier
+</th>
+<th>
+quote_date
+</th>
+<th>
+annual_usage
+</th>
+<th>
+min_order_quantity
+</th>
+<th>
+bracket_pricing
+</th>
+<th>
+quantity
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td align="right">
+1
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td align="right">
+2
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+2
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td align="right">
+3
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+5
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td align="right">
+4
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+10
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td align="right">
+5
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+25
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td align="right">
+6
+</td>
+<td>
+TA-00001
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15879
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+50
+</td>
+</tr>
+</tbody></table>
+<h3>
+train_set.csv
+</h3>
+<pre><code>## Warning in formatC(x = structure(c(15893L, 15893L, 15893L, 15893L,
+## 15893L, : class of 'x' was discarded</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+tube_assembly_id
+</th>
+<th>
+supplier
+</th>
+<th>
+quote_date
+</th>
+<th>
+annual_usage
+</th>
+<th>
+min_order_quantity
+</th>
+<th>
+bracket_pricing
+</th>
+<th>
+quantity
+</th>
+<th>
+cost
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+1
+</td>
+<td align="right">
+21.91
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+2
+</td>
+<td align="right">
+12.34
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+6.60
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+10
+</td>
+<td align="right">
+4.69
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+25
+</td>
+<td align="right">
+3.54
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+TA-00002
+</td>
+<td>
+S-0066
+</td>
+<td align="right">
+15893
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td>
+Yes
+</td>
+<td align="right">
+50
+</td>
+<td align="right">
+3.22
+</td>
+</tr>
+</tbody></table>
+<h3>
+tube.csv
+</h3>
+<pre><code>## Warning: 24 problems parsing '../input/tube.csv'. See problems(...) for
+## more details.</code></pre>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+tube_assembly_id
+</th>
+<th>
+material_id
+</th>
+<th>
+diameter
+</th>
+<th>
+wall
+</th>
+<th>
+length
+</th>
+<th>
+num_bends
+</th>
+<th>
+bend_radius
+</th>
+<th>
+end_a_1x
+</th>
+<th>
+end_a_2x
+</th>
+<th>
+end_x_1x
+</th>
+<th>
+end_x_2x
+</th>
+<th>
+end_a
+</th>
+<th>
+end_x
+</th>
+<th>
+num_boss
+</th>
+<th>
+num_bracket
+</th>
+<th>
+other
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+TA-00001
+</td>
+<td>
+SP-0035
+</td>
+<td align="right">
+12.70
+</td>
+<td align="right">
+1.65
+</td>
+<td align="right">
+164
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+38.10
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-003
+</td>
+<td>
+EF-003
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+TA-00002
+</td>
+<td>
+SP-0019
+</td>
+<td align="right">
+6.35
+</td>
+<td align="right">
+0.71
+</td>
+<td align="right">
+137
+</td>
+<td align="right">
+8
+</td>
+<td align="right">
+19.05
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-008
+</td>
+<td>
+EF-008
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+TA-00003
+</td>
+<td>
+SP-0019
+</td>
+<td align="right">
+6.35
+</td>
+<td align="right">
+0.71
+</td>
+<td align="right">
+127
+</td>
+<td align="right">
+7
+</td>
+<td align="right">
+19.05
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-008
+</td>
+<td>
+EF-008
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+TA-00004
+</td>
+<td>
+SP-0019
+</td>
+<td align="right">
+6.35
+</td>
+<td align="right">
+0.71
+</td>
+<td align="right">
+137
+</td>
+<td align="right">
+9
+</td>
+<td align="right">
+19.05
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-008
+</td>
+<td>
+EF-008
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+TA-00005
+</td>
+<td>
+SP-0029
+</td>
+<td align="right">
+19.05
+</td>
+<td align="right">
+1.24
+</td>
+<td align="right">
+109
+</td>
+<td align="right">
+4
+</td>
+<td align="right">
+50.80
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-003
+</td>
+<td>
+EF-003
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+TA-00006
+</td>
+<td>
+SP-0029
+</td>
+<td align="right">
+19.05
+</td>
+<td align="right">
+1.24
+</td>
+<td align="right">
+79
+</td>
+<td align="right">
+4
+</td>
+<td align="right">
+50.80
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+N
+</td>
+<td>
+EF-003
+</td>
+<td>
+EF-003
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+<td align="right">
+0
+</td>
+</tr>
+</tbody></table>
+<h3>
+tube_end_form.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+end_form_id
+</th>
+<th>
+forming
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+EF-001
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+EF-002
+</td>
+<td>
+No
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+EF-003
+</td>
+<td>
+No
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+EF-004
+</td>
+<td>
+No
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+EF-005
+</td>
+<td>
+Yes
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+EF-006
+</td>
+<td>
+Yes
+</td>
+</tr>
+</tbody></table>
+<h3>
+type_component.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+component_type_id
+</th>
+<th>
+name
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+CP-001
+</td>
+<td>
+4-bolt Tig Straight
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+CP-002
+</td>
+<td>
+4-bolt MJ Straight
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+CP-003
+</td>
+<td>
+4-bolt Braze/Weld Straight
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+CP-004
+</td>
+<td>
+2-bolt Braze/Weld Straight
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+CP-005
+</td>
+<td>
+2-bolt MJ Straight
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+CP-006
+</td>
+<td>
+Braze/Weld Flange Head
+</td>
+</tr>
+</tbody></table>
+<h3>
+type_connection.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+connection_type_id
+</th>
+<th>
+name
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+B-001
+</td>
+<td>
+37 deg Flare-SAE J514
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+B-002
+</td>
+<td>
+ORFS-SAE J1453
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+B-003
+</td>
+<td>
+Hi-Duty
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+B-004
+</td>
+<td>
+NPTF-SAE J476/J514
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+B-005
+</td>
+<td>
+SAE STOR-SAE J1926
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+B-006
+</td>
+<td>
+45 deg Flare-SAE J512
+</td>
+</tr>
+</tbody></table>
+<h3>
+type_end_form.csv
+</h3>
+<!-- html table generated in R 3.2.0 by xtable 1.7-4 package -->
+<!-- Tue Jul  7 14:03:12 2015 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+end_form_id
+</th>
+<th>
+name
+</th>
+</tr>
+<tr>
+<td align="right">
+1
+</td>
+<td>
+A-001
+</td>
+<td>
+Male (Stud)
+</td>
+</tr>
+<tr>
+<td align="right">
+2
+</td>
+<td>
+A-002
+</td>
+<td>
+Male (Swivel)
+</td>
+</tr>
+<tr>
+<td align="right">
+3
+</td>
+<td>
+A-003
+</td>
+<td>
+Braze-Weld Boss
+</td>
+</tr>
+<tr>
+<td align="right">
+4
+</td>
+<td>
+A-004
+</td>
+<td>
+Braze-Weld Socket
+</td>
+</tr>
+<tr>
+<td align="right">
+5
+</td>
+<td>
+A-005
+</td>
+<td>
+Swivel Nut
+</td>
+</tr>
+<tr>
+<td align="right">
+6
+</td>
+<td>
+A-006
+</td>
+<td>
+Bulkhead Male
+</td>
+</tr>
+</tbody></table>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
+
+</body></html>
